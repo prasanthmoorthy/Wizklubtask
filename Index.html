@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Travel Management</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    ​
+    <section>
+        <div id="opening">
+            <div class="main_header">
+                <nav class="navbar navbar-inverse">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="logo_img">
+                                <h5>Travel Management</h5>
+                            </div>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <div class="pull-right mobile_view">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Bookings
+                                            <span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Print Booking</a></li>
+                                            <li><a href="#">Cancel Booking</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a data-toggle="modal" data-target="#modalstatusconfimation"><span
+                                                class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="modalstatusconfimation" class="modal fade" tabindex="-1" role="dialog"
+        aria-labelledby="modalstatusconfimation" aria-hidden="true">
+        <div class="modal-dialog ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="modalstatusconfimation">Login/SignUp With OTP</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12 col-xs-12">
+                            <form action="/action_page.php" class="text-centr">
+                                <div class="row form_class">
+                                    <div class="form-group col-sm-5 col-xs-8">
+                                        <input type="number" class="form-control" id="number"
+                                            placeholder="Enter Mobile Number" name="number">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="checkbox col-sm-5 col-xs-6">
+                                        <label><input type="checkbox" name="remember"> Get First Ride Free</label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary text-center" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="tab_panels">
+                <h1 class="text-center">Book Your Travels</h1>
+                <ul class="nav nav-pills">
+                    <li class="active"><a data-toggle="pill" href="#Bus">Bus</a></li>
+                    <li><a data-toggle="pill" href="#Trains">Trains</a></li>
+                    <li><a data-toggle="pill" href="#Hotels">Hotels</a></li>
+                    <li><a data-toggle="pill" href="#Rentals">Rentals</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div id="Bus" class="tab-pane fade in active">
+
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default margin_top">
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-location-arrow"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" placeholder="Leaving From">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-map-marker"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" placeholder="Going To">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <div class="input-group date_custom">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="date" class="form-control" placeholder="Date Of Journey">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="date" class="form-control" placeholder="Date Of Return">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <button type="button" class="btn btn-info">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+
+                    <!-- <div class="row feature_heading1">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="featureheading_image1">
+
+                            </div>
+                        </div> 
+
+                    </div> -->
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h4 class="col-sm-9 col-xs-4">Bus Offers</h4>
+                                    <ul class="nav nav-pills nav_pills pull-right col-sm-3 col-xs-12">
+                                        <li class="active"><a data-toggle="pill" href="#AllOffers">All Offers</a></li>
+                                        <li><a data-toggle="pill" href="#BusOffers">Bus Offers</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div id="AllOffers" class="tab-pane fade in active">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image1">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image2">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image3">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="BusOffers" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image1">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image2">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image3">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+                                <div class="panel-body h4_custm">
+                                    <h4>Book bus tickets
+                                    </h4>
+                                    <div class="col-sm-2 col-xs-2">
+                                        <div class="logo_custm">
+                                        </div>
+                                        <h5>KSRTC</h5>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-2">
+                                        <div class="logo_custm logo2"></div>
+                                        <h5>GSRTC</h5>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-2">
+                                        <div class="logo_custm logo3"></div>
+                                        <h5>HSRTC</h5>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-2">
+                                        <div class="logo_custm logo4"></div>
+                                        <h5>MSRTC</h5>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-2">
+                                        <div class="logo_custm logo5"></div>
+                                        <h5>PRTC</h5>
+                                    </div>
+                                    <div class="col-sm-2 col-xs-2">
+                                        <div class="logo_custm logo6"></div>
+                                        <h5>RSTC</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+
+                                <div class="panel-body h6_custom">
+                                    <h6>Book Bus Tickets In your favourite Ones</h6>
+                                    <p>Only for you we got rid of the long queues on jammed streets and bus stations for
+                                        bus tickets, we got rid of agents cheating you with jacked up bus ticket prices,
+                                        we are the pioneers
+                                        who revolutionized the online bus booking in India.
+                                        Booking a bus ticket from your couch or when you are on the move was made
+                                        possible by us by just logging on to travel bus.com or booking through the
+                                        Travelbus
+                                        app.</p>
+                                    <p>You could book bus tickets to anywhere in India from over 2500 bus operators
+                                        covering over 100000 routes for Sleeper, AC, Semi luxury, Luxury, and coaches
+                                        from Volvo, Scania, Ashok Leyland to Mercedes at click of a button and
+                                        to make payment convenient we have multiple payment options like, Debit/Credit,
+                                        Net Banking or TravelCash.</p>
+                                    <p>TravelBus Customer Service representatives are available 24 X7 365 days a year,
+                                        who
+                                        are happy to help you book your bus ticket online or attend to any of your
+                                        queries.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="text-center Social">
+                                <h4>We're Social! Connect with us on</h4>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div id="Trains" class="tab-pane fade">
+
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default margin_top">
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-location-arrow"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" placeholder="Enter Source">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-map-marker"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" placeholder="Enter Destination">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <div class="input-group date_custom">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="date" class="form-control" placeholder="Departure">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <button type="button" class="btn btn-info">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+
+                    <!-- <div class="row feature_heading1">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="featureheading_image1">
+
+                            </div>
+                        </div> 
+
+                    </div> -->
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="row rutes_h4">
+                                        <h4>Importent Links</h4>
+                                        <div class="col-sm-3">
+                                            <div class="routes_custom">
+                                            </div>
+                                            <div class="status_custom">PNR Status</div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="routes_custom logoroute1">
+
+                                            </div>
+                                            <div class="status_custom">Coach Position</div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="routes_custom logoroute2">
+                                            </div>
+                                            <div class="status_custom">Route Info</div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="routes_custom logoroute3">
+                                            </div>
+                                            <div class="status_custom">train Info</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+                                <div class="panel-body etickts">
+                                    <h4>Book Train e-Tickets with TravelBus</h4>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="train_custom">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12 inform_custom">
+                                            <p>
+                                                You can now book your train tickets on TravelBus website and Mobile App.
+                                                Booking IRCTC
+                                                train tickets is an easy process with TravelBus without any hassles.At
+                                                TravelBus website & mobile app you can:
+                                            </p>
+                                            <ul>
+                                                <li>Book trains for any destination, class or train type.</li>
+                                                <li>Check PNR status of your ticket</li>
+                                                <li>Check the schedule, route and coach position of different trains
+                                                </li>
+                                                <li>Manage your ticket – download, cancel your tickets easily</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+                                <div class="panel-body etickts">
+                                    <h4>How to book train tickets online?</h4>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12 inform_train">
+
+                                            <ul>
+                                                <li>Visit www.travelbus.com/trains or open travelbus mobile app –
+                                                    android or
+                                                    iOS.</li>
+                                                <li>Select Source and Destination cities, Date of the journey, then
+                                                    click “Search” button</li>
+                                                <li>Choose your train and check seat availability for the same
+                                                </li>
+                                                <li>Select seat class & date that suits you the best</li>\
+                                                <li>Click on “Book” button and enter your IRCTC user ID (If you do not
+                                                    have a User Id then choose
+                                                    “Create IRCTC UserID” option or reset it by clicking on “Forgot
+                                                    IRCTC Password” button)</li>
+                                                <li>Fill the requisite form and click “Book” butto</li>
+                                                <li>Now proceed for payment, Choose method of your preference i.e.
+                                                    Debit/Credit Card, Net banking or AbhiCash. All our payment means
+                                                    are secure and protected.</li>
+                                                <li>You will be redirected to IRCTC to enter the password for the user
+                                                    ID entered earlier and confirm. You are done with it!”</li>
+                                                <p>You will also receive an instant auto update of your payment and
+                                                    ticket through an e-mail & message on your registered mobile numbers
+                                                    or email ids. So no need to carry hardcopy of your tickets.</p>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="train_inform">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="text-center Social">
+                                <h4>We're Social! Connect with us on</h4>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="Hotels" class="tab-pane fade">
+
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default margin_top">
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-location-arrow"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Search by City,Hotel or Area">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <div class="input-group date_custom">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"
+                                                        aria-hidden="true"></i> Check in</span>
+                                                <input type="date" class="form-control" placeholder="Date Of Journey">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <div class="input-group date_custom">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"
+                                                        aria-hidden="true"></i> Check out</span>
+                                                <input type="date" class="form-control" placeholder="Date Of Journey">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <button type="button" class="btn btn-info">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h4 class="col-sm-9 col-xs-4">Bus Offers</h4>
+                                    <ul class="nav nav-pills nav_pills pull-right col-sm-3 col-xs-12">
+                                        <li class="active"><a data-toggle="pill" href="#AllOffers">All Offers</a></li>
+                                        <li><a data-toggle="pill" href="#BusOffers">Bus Offers</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div id="AllOffers" class="tab-pane fade in active">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image1">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image2">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image3">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="BusOffers" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image1">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image2">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image3">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="col-sm-4 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+
+                                                <div class="ticket_custom">
+                                                    <h4>Book Hotels in Hyderabad </h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>Prize Starts at</p>
+                                                <p>RS.500</p>
+                                                <div class="text-center"><button type="button" class="btn btn-info">Book
+                                                        Now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+
+                                                <div class="ticket_custom loc_logo1">
+                                                    <h4>Book Hotels in Bangalore </h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>Prize Starts at</p>
+                                                <p>RS.500</p>
+                                                <div class="text-center"><button type="button" class="btn btn-info">Book
+                                                        Now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 col-xs-12">
+                                        <div class="panel panel-default">
+                                            <div class="panel-thumbnail">
+
+                                                <div class="ticket_custom loc_logo2">
+                                                    <h4>Book Hotels in Mumbai </h4>
+                                                </div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>Prize Starts at</p>
+                                                <p>RS.500</p>
+                                                <div class="text-center"><button type="button" class="btn btn-info">Book
+                                                        Now</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+
+                                <div class="panel-body head_custom">
+                                    <h2>Why book with TravelBus?</h2>
+                                    <p class="col-sm-12 col-xs-12">Finding a hotel for your vacation or a business trip
+                                        just got easier with
+                                        TravelBus- the fastest growing market place for online bus tickets. TravelBus
+                                        has
+                                        curated hotel content understanding the staying needs of our bus travellers. We
+                                        realized what was the point in publishing all the inventory available which may
+                                        be of no relevance to our customers at all . This very thought triggered us to
+                                        curate the content and enter into strategic alliances with leading three star,
+                                        two star hotels and hotel aggregators from across the country who could give the
+                                        quality and price without compromise.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div id="Rentals" class="tab-pane fade in active">
+
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="panel panel-default margin_top">
+
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-location-arrow"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control" placeholder="Enter Source City">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-3 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-map-marker"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter Destination City">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <div class="input-group date_custom">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="date" class="form-control" placeholder="Date Of Journey">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"
+                                                        aria-hidden="true"></i></span>
+                                                <input type="date" class="form-control" placeholder="Date Of Return">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-2 col-xs-10">
+                                            <button type="button" class="btn btn-info">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+
+                    <!-- <div class="row feature_heading1">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="featureheading_image1">
+
+                            </div>
+                        </div> 
+
+                    </div> -->
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h4 class="col-sm-9 col-xs-4">Bus Offers</h4>
+                                    <ul class="nav nav-pills nav_pills pull-right col-sm-3 col-xs-12">
+                                        <li class="active"><a data-toggle="pill" href="#AllOffers">All Offers</a></li>
+                                        <li><a data-toggle="pill" href="#BusOffers">Bus Offers</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div id="AllOffers" class="tab-pane fade in active">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image1">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image2">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image3">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="BusOffers" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image1">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image2">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <div class="safety_image3">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="container">
+                            <div class="panel panel-default">
+
+                                <div class="panel-body h6_custom">
+                                    <h6>TravelBus Rentals</h6>
+                                    <p>TravelBus’s Rental services, offers their customers, a transparent platform to
+                                        check and compare prices and complete the booking with a touch or click. TravelBu’s
+                                        Rentals allows users to filter and sort the buses as per their choice from AC,
+                                        Non-AC, Seater or Sleeper options. As the user is renting a complete bus, he or
+                                        she can opt for multiple pickup and drop points right from their homes or
+                                        offices. This allows accurate price quotes to be arrived at as the trip is
+                                        calculated on the number of actual kilometres that is going to be consumed by
+                                        the user.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="text-center Social">
+                                <h4>We're Social! Connect with us on</h4>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section>
+        ​ <div class="row ">
+            <div class="container-fluid">
+                <div class="panel panel-default">
+                    <div class="panel-footer footer_custom">
+                        <h6>Copyright @ TravelBus Service India Pvt. Ltd. All Right Reserved.
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+​
